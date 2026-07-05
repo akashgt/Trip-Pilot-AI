@@ -1,0 +1,58 @@
+=============================================================================
+                  TripPilot-AI Live Demo Guide Script
+=============================================================================
+
+This guide provides a step-by-step walkthrough to run, test, and demonstrate 
+the TripPilot-AI Concierge system using the Streamlit Dashboard.
+
+-----------------------------------------------------------------------------
+1. Launching the Application
+-----------------------------------------------------------------------------
+To run the project locally, start the uvicorn backend and the Streamlit app:
+
+  # Terminal 1: Start FastAPI backend
+  uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 8000
+
+  # Terminal 2: Start Streamlit Frontend Dashboard
+  uv run streamlit run frontend/dashboard.py --server.port 8501 --server.address 127.0.0.1
+
+Open your browser and navigate to: http://127.0.0.1:8501
+
+-----------------------------------------------------------------------------
+2. Step-by-Step Demo Flow
+-----------------------------------------------------------------------------
+
+Step 2.1: Setup traveler memory and preferences
+- Navigate to the "Travel Preferences" page in the sidebar.
+- Enter favorite hotel chains (e.g. "Park Hyatt, Ritz Carlton") and dietary restrictions.
+- Click "Update Memory State".
+
+Step 2.2: Plan a new trip
+- Go to "Trip Planner" page in the sidebar.
+- Input destination "Tokyo, Japan" and select July 10, 2026 to July 17, 2026.
+- Click "Generate Itinerary". The Memory Agent seeds favorite hotels and the Planner Agent generates the daily sightseeing slots in database.
+- Go to "Live Itinerary" to inspect the timeline.
+
+Step 2.3: Simulate flight delay (HITL Rescheduling)
+- Go to the "Simulator Panel" page in the sidebar.
+- Click "Flight Delayed (3h)".
+- The page updates displaying a yellow warning card: "Human-in-the-Loop Approval Required". It presents details of rescheduling the hotel check-in from 4:00 PM to 7:00 PM due to flight delay.
+- Click "Approve Change".
+- Go to the "Live Itinerary" page and observe that the hotel check-in has updated, and "Notifications" dispatches companionship email logs.
+
+Step 2.4: Simulate weather storm disruption (HITL Activity Swapping)
+- On the "Simulator Panel", click "Storm Forecast".
+- The system warns of a storm warning and requests approval to swap outdoor walks with indoor museums (Mori Art Museum and teamLab Planets).
+- Click "Approve Change".
+- View "Live Itinerary" to see the updated daily schedule.
+
+Step 2.5: Simulate budget overrun
+- On the "Simulator Panel", click "Budget Overrun".
+- This logs a $650 private taxi ride.
+- The agent notices the limit is hit, displays a red budget warning, and suggests cheaper transport options (Tokyo Subway Pass or Pasmo IC cards).
+- Inspect this on the "Budget Tracker" page.
+
+Step 2.6: Emergency Console Check
+- On the "Simulator Panel", click "Lost Passport Emergency".
+- The console returns emergency police contacts (Police 110 in Japan), embassy contact address, and step-by-step recovery checklists.
+- Inspect the logs on the "Emergency Console" page.
