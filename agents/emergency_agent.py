@@ -17,6 +17,13 @@ def lookup_emergency_contacts(location: str) -> str:
             "hospital": "St. Luke's International Hospital: 9-1 Akashicho, Chuo-ku, Tel: +81 3-3541-5151",
             "fire_ambulance": "Fire & Ambulance: dial 119"
         }
+    elif "india" in loc or any(city in loc for city in ["goa", "mumbai", "delhi", "bengaluru", "bangalore", "jaipur", "chennai", "kolkata", "pune", "hyderabad", "kochi", "agra"]):
+        contacts = {
+            "embassy": "U.S. Embassy New Delhi: Shantipath, Chanakyapuri, New Delhi, Tel: +91 11-2419-8000",
+            "police": "Emergency Police: dial 112 / 100",
+            "hospital": "Fortis / Apollo Emergency Care (Ambulance: dial 102 or 108)",
+            "fire_ambulance": "Fire: dial 101 / Ambulance: dial 102 or 108"
+        }
     else:
         contacts = {
             "embassy": f"Local Consulate/Embassy in {location}",
