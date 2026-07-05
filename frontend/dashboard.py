@@ -430,7 +430,22 @@ elif page == "🗺️ Trip Planner":
             elif "goa" in dest_lower or "india" in dest_lower:
                 airline = "IndiGo"
                 flight_num = "6E2091"
-                hotel_name = "Taj Exotica Resort & Spa, Goa"
+                if "mumbai" in dest_lower:
+                    hotel_name = "Taj Mahal Palace, Mumbai"
+                elif "delhi" in dest_lower:
+                    hotel_name = "Taj Palace, New Delhi"
+                elif "bengaluru" in dest_lower or "bangalore" in dest_lower:
+                    hotel_name = "Taj West End, Bengaluru"
+                elif "jaipur" in dest_lower:
+                    hotel_name = "Rambagh Palace (Taj), Jaipur"
+                elif "chennai" in dest_lower:
+                    hotel_name = "Taj Coromandel, Chennai"
+                elif "kolkata" in dest_lower:
+                    hotel_name = "Taj Bengal, Kolkata"
+                elif "goa" in dest_lower:
+                    hotel_name = "Taj Exotica Resort & Spa, Goa"
+                else:
+                    hotel_name = f"Taj Hotel, {dest.split(',')[0].strip()}"
             elif "dubai" in dest_lower or "uae" in dest_lower:
                 airline = "Emirates"
                 flight_num = "EK571"
