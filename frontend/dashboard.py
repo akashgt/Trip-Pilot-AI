@@ -507,7 +507,7 @@ elif page == "🗺️ Trip Planner":
                     airline = fav_airline
                     flight_num = f"{airline[:2].upper()}982"
                     
-            if prefs.get("favorite_hotels"):
+            if prefs.get("favorite_hotels") and not ("goa" in dest_lower or "india" in dest_lower):
                 hotel_name = f"{prefs['favorite_hotels'][0]} {dest.split(',')[0].strip()}"
             
             # Setup default flight and hotel
