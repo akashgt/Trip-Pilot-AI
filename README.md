@@ -199,7 +199,7 @@ trip-pilot-ai/
 
 # Youtube Demo
  
-[![Video Title](https://img.youtube.com/vi/pCJGNg0jhqc&t=11s/0.jpg)](https://www.youtube.com/watch?v=pCJGNg0jhqc&t=11s)
+[![Video Title](https://img.youtube.com/vi/pCJGNg0jhqc/0.jpg)](https://www.youtube.com/watch?v=pCJGNg0jhqc)
  
 ### 1. Prerequisites
 Ensure you have `uv` installed (Python package manager):
