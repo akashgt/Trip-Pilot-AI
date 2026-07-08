@@ -197,6 +197,11 @@ trip-pilot-ai/
 
 ## 🚀 Getting Started
 
+# Youtube Demo
+ 
+[![Watch the video](https://www.youtube.com/watch?v=pCJGNg0jhqc&t=11s)
+
+ 
 ### 1. Prerequisites
 Ensure you have `uv` installed (Python package manager):
 ```bash
